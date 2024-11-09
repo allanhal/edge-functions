@@ -12,6 +12,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-webcam": "^7.2.0"
+    "react-webcam": "^7.2.0",
+    "vercel": "^37.14.0"
   }
 }

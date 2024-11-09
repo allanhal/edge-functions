@@ -24,8 +24,8 @@ export default function WebcamImage() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          if (data.message && typeof data.message === "string") {
-            setMessage(data.message);
+          if (data.message.resposta && typeof data.message.resposta === "string") {
+            setMessage(data.message.resposta);
           }
         })
         .catch((error) => console.error("Error:", error));
@@ -60,8 +60,8 @@ export default function WebcamImage() {
         </>
       ) : (
         <>
+          <p>message: {message}</p>
           <p>img: {img}</p>
-          <p>{message}</p>
           <img src={img} alt="screenshot" />
           <button onClick={() => setImg(null)}>Recapture</button>
         </>
