@@ -1,7 +1,7 @@
 import Webcam from "react-webcam";
 import React, { useState, useRef, useCallback, useEffect } from "react";
 
-export default function WebcamImage() {
+export default function WebcamImage({ facingMode = "user" }) {
   const webcamRef = useRef(null);
   const [img, setImg] = useState(null);
 
@@ -24,7 +24,10 @@ export default function WebcamImage() {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-          if (data.message.resposta && typeof data.message.resposta === "string") {
+          if (
+            data.message.resposta &&
+            typeof data.message.resposta === "string"
+          ) {
             setMessage(data.message.resposta);
           }
         })
@@ -40,7 +43,7 @@ export default function WebcamImage() {
   const videoConstraints = {
     width: 390,
     height: 390,
-    facingMode: "user",
+    facingMode,
   };
 
   return (
