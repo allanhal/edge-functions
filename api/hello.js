@@ -38,7 +38,7 @@ const longMethod = async ({ image }) => {
 
     const resposta = result.response.text();
 
-    console.log("resposta", resposta);
+    // console.log("resposta", resposta);
 
     let respostaNumero = 0;
 
